@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @posts=Post.where(user_id: user_ids).order("created_at DESC")
   end
   def show
-    @post = Post.find(params[:id])
+     @post = Post.includes(comments: [:user]).find(params[:id])
      @can_moderate = (current_user == @post.user)
   end
 end
