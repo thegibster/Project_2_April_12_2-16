@@ -1,4 +1,22 @@
 class User < ActiveRecord::Base
-    has_secure_password
-    validates :email, presence: true, uniqueness: {case_sensitive: false}
+  has_secure_password
+  validates :email, presence: true, uniqueness: {case_sensitive: false}
+
+  has_many :subscriptions, foreign_key: :follower_id,
+                                dependent: :destroy
+  has_many :leaders, through: :subscriptions
+  has_many :reverse_subscriptions, foreign_key: :leader_id,
+                                class_name: 'Subscription',
+                                dependent: :destroy
+  has_many :followers, through: :reverse_subscriptions
+
+    def following?(leader)
+       leaders.include? leader
+     end
+
+     def follow!(leader)
+      if leader != self && !following?(leader)
+         leaders << leader
+    end
+end
 end
