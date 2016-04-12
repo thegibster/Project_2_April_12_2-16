@@ -2,6 +2,13 @@
   <div class="paenl-heading">
     <h3 class ="panel-title">
       <%= image_post.title %>
+      <% if image_post.user == current_user %>
+      <p>
+      <%= link_to 'Edit', edit_image_post_path(image_post),
+            class: "btn btn-default" %>
+
+      </p>
+    <% end %>
     </h3>
     <%= link_to "#{time_ago_in_words image_post.created_at} ago",
         post_path(image_post) %>
