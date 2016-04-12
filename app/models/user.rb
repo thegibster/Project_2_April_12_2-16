@@ -19,8 +19,16 @@ class User < ActiveRecord::Base
      end
 
      def follow!(leader)
-      if leader != self && !following?(leader)
+        if leader != self && !following?(leader)
          leaders << leader
-    end
-end
+        end
+
+      end
+       def timeline_user_ids
+          leader_ids + [id]
+
+        end
+  def timeline_user_ids
+    leader_ids + [id]
+  end
 end

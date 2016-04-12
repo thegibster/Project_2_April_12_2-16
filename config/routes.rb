@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'posts#index'
   resources :comments
   resources :image_posts
   resources :text_posts
@@ -6,8 +7,9 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   get "/register", to: "users#new"
-get "/login", to: "sessions#new"
-  get '/login', to: 'sessions#new'
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'users/new'
 
   get 'users/create'
