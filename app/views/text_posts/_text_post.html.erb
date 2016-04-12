@@ -20,6 +20,12 @@
          <%= link_to 'Edit', edit_text_post_path(text_post),
               class: "btn btn-default" %>
          </p>
+         <p>
+           <%= link_to 'Destroy', text_post, method: :delete,
+             data: { confirm: 'Are you sure?' } %>
+
+         </p>
+
        <% end %>
 </div>
 </div>

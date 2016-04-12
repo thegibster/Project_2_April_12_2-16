@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   def create
+    @post = Post.find(params[:post_id])
   @comment = current_user.comments.build(comment_params)
 
   if @comment.save
@@ -8,6 +9,7 @@ class CommentsController < ApplicationController
   else
      redirect_to post_path(@comment.post_id),
                  alert: 'Error creating comment.'
+                 @comment.errors.full_messages.to_sentence
   end
 end
  def destroy
