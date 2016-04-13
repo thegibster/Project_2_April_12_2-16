@@ -1,7 +1,2 @@
-<div class="comment">
-  <i><%=h comment.name %> says:</i><br />
-  <%= simple_format h(comment.body) %>
-  <%= link_to 'Destroy Comment', comment,
-    :confirm => 'Are you sure?',
-    :method => :delete if logged_in? %>
-</div>
+<p><em><%= comment.user.name %> said:</em></p>
+<p><%= comment.body %></p>

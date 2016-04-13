@@ -1,9 +1,21 @@
 <div class ="page-header">
-<h1>Post for User</h1>
+<h1><%=  Post.find(params[:id]).title %></h1>
 </div>
 
 
 <body>
-  <%= render @post %>
-  <%= render 'comments/_form' %>
+should render the post
+<%=  Post.find(params[:id]).user_id %>
+<%=  Post.find(params[:id]).type %> <!-- Based on type to a render -->
+  <% if Post.find(params[:id]).type == 'TextPost' %>
+    <%=Post.find(params[:id]).body%>
+
+  <% else %>
+    <%=render Post.find(params[:id])%>
+  <%end%>
+
+
+
+
+<!--    render 'comments/_form'  -->
 </body>

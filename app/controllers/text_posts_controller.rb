@@ -34,6 +34,15 @@ class TextPostsController < ApplicationController
   end
 end
 
+  def show
+    # @post=Post.all
+
+       @post = Post.includes(comments: [:user]).find(params[:id])  # only shows posts for this post
+     # @can_moderate = (current_user == @post.user)
+     # @comment = Comment.new( :post => @post )
+     redirect_to text_posts_path
+  end
+
 private
 def text_post_params
   params.require(:text_post).permit(:title, :body)

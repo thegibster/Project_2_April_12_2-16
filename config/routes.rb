@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
-  resources :comments
-  resources :image_posts
-  resources :text_posts
-  resources :posts
+  resources :image_posts do resources :comments end
+  resources :text_posts do resources :comments end
   resources :users, except: [:index, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   get "/register", to: "users#new"
@@ -13,7 +11,12 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   get 'users/new'
 get 'posts/:id/comments/show', to: "comments#show"
+
+get 'image_posts/:id/comments/new', to: "comments#show"
+get 'text_posts/:id/comments/new', to: "comments#show"
   get 'users/create'
+  resources :posts, only: [:index, :show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

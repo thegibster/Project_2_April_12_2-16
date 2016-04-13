@@ -7,11 +7,5 @@ class PostsController < ApplicationController
 
     # @comments = Comment.where(post_id: post_ids)("created_at DESC")
   end
-  def show
-    @post=Post.all
 
-      # @post = Post.includes(comments: [:user]).find(params[:id])
-     # @can_moderate = (current_user == @post.user)
-     # @comment = Comment.new( :post => @post )
-  end
 end

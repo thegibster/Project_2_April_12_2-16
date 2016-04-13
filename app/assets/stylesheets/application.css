@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+#nicePier {
+  background-image: url("nicepier.jpg");
+}
