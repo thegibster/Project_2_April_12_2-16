@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
   def show
     @post=Post.all
-    @comment = Comment.new( :post => @post )
+
       # @post = Post.includes(comments: [:user]).find(params[:id])
      # @can_moderate = (current_user == @post.user)
      # @comment = Comment.new( :post => @post )

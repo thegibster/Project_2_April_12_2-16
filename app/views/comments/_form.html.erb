@@ -1,2 +1,12 @@
+<%= form_for([@post, @post.comments.build]) do |f| %>
+<div class="page-header">
+  <h1>New Comment page</h1>
+</div>
+
+
+
+
+
 <%= f.hidden_field :user_id, value: current_user.id %>
 <%= f.hidden_field :post_id, value: @post.id %>
+<% end %>
