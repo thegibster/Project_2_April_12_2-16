@@ -1,24 +1,33 @@
-<div class="panel-default">
-  <div class="paenl-heading">
+<div class="panel panel-default">
+  <div class="panel-heading">
     <h3 class ="panel-title">
       <%= image_post.title %>
-      <% if image_post.user == current_user %>
-      <p>
-      <%= link_to 'Edit', edit_image_post_path(image_post),
-            class: "btn btn-default" %>
-
-      </p>
-    <% end %>
     </h3>
     <%= link_to "#{time_ago_in_words image_post.created_at} ago",
-        post_path(image_post) %>
+    post_path(image_post) %>
   </div>
- <div class="panel-body">
-  <p><em>By <%= link_to image_post.user.name, image_post.user %></em></p>
+  <div class="panel-body">
+  <div class="panel-body">
 
-  <%= image_tag image_post.url, class: "img-responsive" %>
+    <%= image_tag image_post.url, class: "img-responsive" %>
+ <%= image_post.body %>
+    <p><em>By <%= link_to image_post.user.name, image_post.user %></em></p>
 
-  <%= image_post.body %>
+
+  </div>
+
+  <% if image_post.user == current_user %>
+  <p>
+    <%= link_to 'Edit', edit_image_post_path(image_post),
+    class: "btn btn-default" %>
+  </p>
+  <p>
+       <%= link_to 'Destroy', image_post, method: :delete,
+       data: { confirm: 'Are you sure?' },
+       class: "btn btn-default" %>
+
+       </p>
+  <% end %>
+  </div>
 </div>
 
-</div>
