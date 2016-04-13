@@ -10,6 +10,19 @@ should render the post
   <% if Post.find(params[:id]).type == 'TextPost' %>
     <%=Post.find(params[:id]).body%>
 
+      <% if Post.find(params[:id]).user_id == session[:user_id] %>
+
+       <%= link_to 'Edit', edit_text_post_path(Post.find(params[:id])),
+       class: "btn btn-default" %>
+
+
+       <%= link_to 'Destroy', Post.find(params[:id]), method: :delete,
+       data: { confirm: 'Are you sure?' },
+       class: "btn btn-default" %>
+
+
+     <% end %>
+
   <% else %>
     <%=render Post.find(params[:id])%>
   <%end%>

@@ -17,16 +17,15 @@
   </div>
 
   <% if image_post.user == current_user %>
-  <p>
+
     <%= link_to 'Edit', edit_image_post_path(image_post),
     class: "btn btn-default" %>
-  </p>
-  <p>
+
        <%= link_to 'Destroy', image_post, method: :delete,
        data: { confirm: 'Are you sure?' },
        class: "btn btn-default" %>
 
-       </p>
+
   <% end %>
   </div>
 </div>
