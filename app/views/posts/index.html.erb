@@ -13,7 +13,9 @@
 
 
 <% @posts.each do |post| %>
-<%= render post %>
-
-
+  <% if post.type == 'TextPost' %>
+    <%= render "text_post", :post => post %>
+  <% else %>
+    <%= render "image_post", :post => post %>
+  <%end%>
 <%end%>

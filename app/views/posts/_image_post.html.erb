@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class ="panel-title">
+      <%= post.title %>
+    </h3>
+    <%= link_to "#{time_ago_in_words post.created_at} ago",
+    image_post_path(post) %>
+  </div>
+  <div class="panel-body">
+  <div class="panel-body">
+
+    <%= image_tag post.url, class: "img-responsive" %>
+ <%= post.body %>
+    <p><em>By <%= link_to post.user.name, post.user %></em></p>
+
+
+  </div>
+
+  <% if post.user == current_user %>
+
+    <%= link_to 'Edit', edit_image_post_path(post),
+    class: "btn btn-default" %>
+
+       <%= link_to 'Destroy', post, method: :delete,
+       data: { confirm: 'Are you sure?' },
+       class: "btn btn-default" %>
+
+
+  <% end %>
+  </div>
+</div>
+

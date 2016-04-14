@@ -15,7 +15,7 @@ get 'posts/:id/comments/show', to: "comments#show"
 get 'image_posts/:id/comments/new', to: "comments#show"
 get 'text_posts/:id/comments/new', to: "comments#show"
   get 'users/create'
-  resources :posts, only: [:index, :show]
+  resources :posts, only: [:index]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
