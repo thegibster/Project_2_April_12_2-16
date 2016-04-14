@@ -13,7 +13,7 @@
 
         <p><em>By <%= link_to post.user.name, post.user %></em></p>
 
-          <%=  post.user.comments.size %>
+          <%=  post.comments.size %>
       </div>
 
       <% if post.user == current_user %>

@@ -4,5 +4,9 @@
 <%=  @image_post.comments.size %> <br>
 <%= @post_id %> po id <br>
 <%= @image_post.id %>im po <br>
-<%= session[:user_id] %> sesh id
+<%= session[:user_id] %> sesh id <br>
+
+<%= @image_post.user_id %> owner of this post <br>
+<% turnUp = Post.find(@image_post.id).type %>
+<%= turnUp %>
 

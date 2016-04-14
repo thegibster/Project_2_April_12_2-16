@@ -1,28 +1,28 @@
 <div class="panel panel-default">
   <div class ="panel-heading">
     <h3 class="panel-title">
-      <%= text_post.title %>
+      <%= post.title %>
     </h3>
     <%= link_to(
       "#{time_ago_in_words text_post.created_at} ago",
-      text_post_path(text_post)) %>
+      text_post_path(post)) %>
     </div>
     <div class = "panel-body">
       <div class="panel-body">
-      <%= text_post.body %>
+      <%= post.body %>
 
-        <p><em>By <%= link_to text_post.user.name, text_post.user %></em></p>
+        <p><em>By <%= link_to post.user.name, post.user %></em></p>
 
 
       </div>
 
-      <% if text_post.user == current_user %>
+      <% if post.user == current_user %>
 
-       <%= link_to 'Edit', edit_text_post_path(text_post),
+       <%= link_to 'Edit', edit_text_post_path(post),
        class: "btn btn-default" %>
 
 
-       <%= link_to 'Destroy', text_post, method: :delete,
+       <%= link_to 'Destroy', post, method: :delete,
        data: { confirm: 'Are you sure?' },
        class: "btn btn-default" %>
 
