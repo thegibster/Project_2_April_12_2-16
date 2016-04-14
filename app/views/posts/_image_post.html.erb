@@ -12,7 +12,7 @@
     <%= image_tag post.url, class: "img-responsive" %>
  <%= post.body %>
     <p><em>By <%= link_to post.user.name, post.user %></em></p>
-
+<%=  post.user.comments.size %>
 
   </div>
 
