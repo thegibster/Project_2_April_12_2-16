@@ -17,8 +17,8 @@
 
     <div class="pull-right">
       <% if current_user %>
-      <%= link_to 'Profile', current_user %>
-      <%= link_to 'Log Out', logout_path, method: :delete %>
+      <div class="btn btn-info"><%= link_to 'Profile', current_user %></div>
+      <div class="btn btn-warning"><%= link_to 'Log Out', logout_path, method: :delete %></div>
       <% else %>
       <%= link_to 'Log In', login_path %> or
       <%= link_to 'Sign Up', signup_path %>

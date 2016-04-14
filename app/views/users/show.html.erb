@@ -20,8 +20,13 @@
   <% end %>
 <% end %>
 
-<%= render @posts %>
-
+<%  @posts.each do |post| %>
+<% if post.type == 'TextPost' %>
+    <%= render "posts/text_post", :post => post %>
+  <% else %>
+    <%= render "posts/image_post", :post => post %>
+  <%end%>
+<% end %>
 
 
 

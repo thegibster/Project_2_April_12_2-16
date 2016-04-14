@@ -1,3 +1,11 @@
-text show.html.erb
+
  <%= render :partial => "comments/formt" %>
-raer
+
+ <%# @text_post.inspect %><br>
+<%   @text_post.comments.all.each do |f| %>
+<div class="panel panel-default">
+  <div class ="panel-heading">
+<h3 class="panel-title">
+  <%=  f.body %>
+  </h3></div></div><br>
+<% end %>

@@ -1,6 +1,9 @@
- images show.html.erb
+
  <%= render :partial => "comments/form" %>
 
+
+<% if false %>
+this is a comment i used this for testing
 <%=  @image_post.comments.size %> <br>
 <%= @post_id %> po id <br>
 <%= @image_post.id %>im po <br>
@@ -10,3 +13,4 @@
 <% turnUp = Post.find(@image_post.id).type %>
 <%= turnUp %>
 
+<% end %>
