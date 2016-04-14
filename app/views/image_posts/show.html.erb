@@ -1,5 +1,16 @@
-
+<div class ="page-header">
+<h1><p class="lead"><%= @image_post.title %></p></h1>
+<h1><p class="lead"><img src= <%= @image_post.url %>></p></h1>
  <%= render :partial => "comments/form" %>
+</div>
+
+<%   @image_post.comments.all.each do |f| %>
+<div class="panel panel-default">
+  <div class ="panel-heading">
+<h3 class="panel-title">
+  <%=  f.body %>
+  </h3></div></div><br>
+<% end %>
 
 
 <% if false %>
