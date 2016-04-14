@@ -28,7 +28,7 @@ class ImagePostsController < ApplicationController
     def show
     # @post=Post.all
 
-       @post = Post.includes(comments: [:user]).find(params[:id])  # only shows posts for this post
+       @image_post = Post.includes(comments: [:user]).find(params[:id])  # only shows posts for this post
      # @can_moderate = (current_user == @post.user)
      # @comment = Comment.new( :post => @post )
   end

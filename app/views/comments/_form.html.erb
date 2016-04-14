@@ -1,15 +1,14 @@
-<%= form_for ([@post, @comment]) do |f| %>
+<%= form_for [@image_post, @image_post.comments.build] do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title, class: "form-control" %>
+
 
   <div class="form-group">
-    <%= f.label :body %>
+    <%= f.label :Comment %>
     <%= f.text_area :body, class: "form-control" %>
   </div>]
 
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.hidden_field :image_post_id, value: @image_post.id %>
 
 
   <%= f.submit class: "btn btn-primary" %>

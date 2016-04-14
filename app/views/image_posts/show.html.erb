@@ -1,1 +1,8 @@
  images show.html.erb
+ <%= render :partial => "comments/form" %>
+
+<%=  @image_post.comments.size %> <br>
+<%= @post_id %> po id <br>
+<%= @image_post.id %>im po <br>
+<%= session[:user_id] %> sesh id
+
