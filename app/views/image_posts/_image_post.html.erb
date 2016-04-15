@@ -1,27 +1,27 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class ="panel-title">
-      <%= image_post.title %>
+      <%= post.title %>
     </h3>
     <%= link_to "#{time_ago_in_words image_post.created_at} ago",
-    image_post_path(image_post) %>
+    image_post_path(post) %>
   </div>
   <div class="panel-body">
     <div class="panel-body">
 
       <%= image_tag image_post.url, class: "img-responsive" %>
       <%= image_post.body %>
-      <p><em>By <%= link_to image_post.user.name, image_post.user %></em></p>
+      <p><em>By <%= link_to post.user.name, image_post.user %></em></p>
 
 
     </div>
 
-    <% if image_post.user == current_user %>
+    <% if post.user == current_user %>
 
-    <%= link_to 'Edit', edit_image_post_path(image_post),
+    <%= link_to 'Edit', edit_image_post_path(post),
     class: "btn btn-default" %>
 
-    <%= link_to 'Destroy', image_post, method: :delete,
+    <%= link_to 'Destroy', post, method: :delete,
     data: { confirm: 'Are you sure?' },
     class: "btn btn-default" %>
 

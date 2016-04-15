@@ -24,6 +24,17 @@ class ImagePostsController < ApplicationController
       render :edit, alert: "Error updating post."
     end
   end
+   def destroy
+
+  @image_post = ImagePost.find(params[:id])
+
+    if @image_post.present?
+      @image_post.destroy
+      redirect_to root_path, notice: "Post Deleted!"
+    else
+     render :edit, alert: "Error Deleting post."
+   end
+ end
 
   def show
     # @post=Post.all
