@@ -1,5 +1,8 @@
 <div class="page-header">
    <h1><p class="lead"><%= @user.name %></p></h1>
+   <h6>Followed By: <%= current_user.leaders.size %>
+   Following <%= current_user.followers.size %>
+    </h6>
 </div>
 
 <%= link_to "Home", root_path,

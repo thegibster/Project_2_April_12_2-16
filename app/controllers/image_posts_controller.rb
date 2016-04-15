@@ -5,7 +5,7 @@ class ImagePostsController < ApplicationController
   def create
     @image_post = current_user.image_posts.build(image_post_params)
     if @image_post.save
-      redirect_to post_path(@image_post),
+      redirect_to root_path,
                     notice: "Post created!"
     else
       render :new, alert: "Error creating post."
