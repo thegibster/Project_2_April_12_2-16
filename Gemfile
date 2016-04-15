@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'twitter-bootstrap-rails'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
+gem 'taps', '~> 0.3.24'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
