@@ -1,36 +1,36 @@
 <div class="page-header">
-   <h1><p class="lead"><%= current_user.name %></p></h1>
-   <h6>Followed By: <%= current_user.followers.size %>
+ <h1><p class="lead"><%= current_user.name %></p></h1>
+ <h6>Followed By: <%= current_user.followers.size %>
    Following <%= current_user.leaders.size %>
    Total Posts: <%= current_user.posts.size %>
-    </h6>
+ </h6>
 </div>
 
 <%= link_to "Home", root_path,
-       class: "btn btn-default" %>
-  <%= link_to "Follow", follow_user_path(@user),
-       class: "btn btn-default" %>
+class: "btn btn-default" %>
+<%= link_to "Follow", follow_user_path(@user),
+class: "btn btn-default" %>
 <%# if current_user %>
-  <%# if current_user != @user && !current_user.following?(@user) %>
+<%# if current_user != @user && !current_user.following?(@user) %>
     <%# link_to "Follow", follow_user_path(@user),
-          class: "btn btn-default" %>
-  <%# end %>
-<%# end %>
+    class: "btn btn-default" %>
+    <%# end %>
+    <%# end %>
 
 
-<h2>Posts</h2>
+    <h2>Posts</h2>
 
-<!-- <p class="lead"><%= @user.name %></p> -->
+    <!-- <p class="lead"><%= @user.name %></p> -->
 
 
 
-<%  @posts.each do |post| %>
-<% if post.type == 'TextPost' %>
+    <%  @posts.each do |post| %>
+    <% if post.type == 'TextPost' %>
     <%= render "posts/text_post", :post => post %>
-  <% else %>
+    <% else %>
     <%= render "posts/image_post", :post => post %>
-  <%end%>
-<% end %>
+    <%end%>
+    <% end %>
 
 
 

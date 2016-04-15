@@ -1,27 +1,27 @@
 <div class ="page-header">
-<h1><p class="lead"><%= @image_post.title %></p></h1>
-<h1><p class="lead"><img src= <%= @image_post.url %>></p></h1>
- <%= render :partial => "comments/form" %>
+  <h1><p class="lead"><%= @image_post.title %></p></h1>
+  <h1><p class="lead"><img src= <%= @image_post.url %>></p></h1>
+  <%= render :partial => "comments/form" %>
 </div>
 
 <%   @image_post.comments.all.each do |f| %>
 <div class="panel panel-default">
   <div class ="panel-heading">
-<h3 class="panel-title">
-  <%=  f.body %>
-  </h3></div></div><br>
-<% end %>
+    <h3 class="panel-title">
+      <%=  f.body %>
+    </h3></div></div><br>
+    <% end %>
 
 
-<% if false %>
-this is a comment i used this for testing
-<%=  @image_post.comments.size %> <br>
-<%= @post_id %> po id <br>
-<%= @image_post.id %>im po <br>
-<%= session[:user_id] %> sesh id <br>
+    <% if false %>
+    this is a comment i used this for testing
+    <%=  @image_post.comments.size %> <br>
+    <%= @post_id %> po id <br>
+    <%= @image_post.id %>im po <br>
+    <%= session[:user_id] %> sesh id <br>
 
-<%= @image_post.user_id %> owner of this post <br>
-<% turnUp = Post.find(@image_post.id).type %>
-<%= turnUp %>
+    <%= @image_post.user_id %> owner of this post <br>
+    <% turnUp = Post.find(@image_post.id).type %>
+    <%= turnUp %>
 
-<% end %>
+    <% end %>

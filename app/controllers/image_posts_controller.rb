@@ -6,7 +6,7 @@ class ImagePostsController < ApplicationController
     @image_post = current_user.image_posts.build(image_post_params)
     if @image_post.save
       redirect_to root_path,
-                    notice: "Post created!"
+      notice: "Post created!"
     else
       render :new, alert: "Error creating post."
     end
@@ -25,17 +25,17 @@ class ImagePostsController < ApplicationController
     end
   end
 
-    def show
+  def show
     # @post=Post.all
 
        @image_post = Post.includes(comments: [:user]).find(params[:id])  # only shows posts for this post
      # @can_moderate = (current_user == @post.user)
      # @comment = Comment.new( :post => @post )
-  end
+   end
 
-  private
+   private
 
-  def image_post_params
+   def image_post_params
     params.require(:image_post).permit(:title, :url, :body)
   end
 end

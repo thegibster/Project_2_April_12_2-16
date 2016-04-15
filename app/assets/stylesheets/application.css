@@ -13,11 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
 body {
-/*  background-image: url("nicepier.jpg");
+    /*  background-image: url("nicepier.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;*/
 }
-.panel{
-  opacity: .9;
+.panel {
+    opacity: .9;
 }
