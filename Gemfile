@@ -22,13 +22,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'seed_dump'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-gem 'twitter-bootstrap-rails'
+gem 'seed_dump'  # Takes whatever data generated locally and dumps the postgresql file into the db:seed
+#which and then be used with taps to push to heroku
+#Was advised to use the ruby sample keyowrd to generate random user/post/comment associations on heroku end based on seed data
+gem 'taps', '~> 0.3.24' # Used to push data to Heroku from terminal
+gem 'bcrypt', '~> 3.1.7'  # Use ActiveModel has_secure_password
+gem 'twitter-bootstrap-rails' # Bootstrap framework for visual styling
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
-gem 'taps', '~> 0.3.24'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
